@@ -18,7 +18,7 @@ import java.util.List;
  */
 @Slf4j
 @Getter
-public class MemoryRepo {
+public final class MemoryRepo {
 
     private final Collection<Store> stores;
 
