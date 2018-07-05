@@ -5,6 +5,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
+/**
+ * Loads any bean requires before the app starts
+ */
 @Component
 @Configuration
 @ConditionalOnProperty(name = PropertyNames.STORES_DATABASE, havingValue = "memory")

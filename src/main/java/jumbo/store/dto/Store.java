@@ -5,6 +5,9 @@ import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
+/**
+ * Represents a Jumbo Store
+ */
 @Getter
 @Builder
 @EqualsAndHashCode

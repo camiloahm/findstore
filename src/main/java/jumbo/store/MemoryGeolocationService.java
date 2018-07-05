@@ -12,9 +12,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * This service can find Jumbo Stores Near by to some given location using an in Memory
- * Database created from a JSON filea better approach would be to store that data inside
- * a NoSQL Database like Elasticsearch or Mongo which have capabilities to aggregate locations
+ * This service can find Jumbo Stores Near by to some given location, using an in Memory
+ * Database created from a JSON file; a better approach would be to store that data inside
+ * a NoSQL Database like Elasticsearch or Mongo which have capabilities to aggregate
+ * geolocations
  */
 @Service
 class MemoryGeolocationService implements GeolocationService {

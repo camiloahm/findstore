@@ -4,7 +4,9 @@ import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
-
+/**
+ * Represents a store location
+ */
 @Getter
 @Builder
 @EqualsAndHashCode
@@ -35,13 +37,6 @@ public class Location {
         double nauticalMiles = 60 * Math.toDegrees(angle);
         double statuteMiles = STATUTE_MILES_PER_NAUTICAL_MILE * nauticalMiles;
         return statuteMiles;
-    }
-
-    /**
-     * @return string representation of this point
-     */
-    public String toString() {
-        return " (" + latitude + ", " + longitude + ")";
     }
 
 }
