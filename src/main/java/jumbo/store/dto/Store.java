@@ -1,5 +1,6 @@
 package jumbo.store.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -26,6 +27,7 @@ public class Store {
     private double longitude;
     private double latitude;
 
+    @JsonIgnore
     public Location getLocation() {
         return Location.builder()
                 .latitude(latitude)

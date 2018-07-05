@@ -10,7 +10,7 @@ class DataSourceConfiguration {
 
     @Bean
     MemoryRepo memoryRepo() {
-        return MemoryRepo.buildRepo(getClass().getClassLoader().getResource("data/stores.json"));
+        return MemoryRepo.buildRepo(getClass().getClassLoader().getResourceAsStream("data/stores.json"));
     }
 
 }

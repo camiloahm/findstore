@@ -7,9 +7,7 @@ import jumbo.store.dto.Store;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.net.URL;
 import java.util.Collection;
@@ -25,20 +23,12 @@ public class MemoryRepo {
         this.stores = stores;
     }
 
-    public static MemoryRepo buildRepo(URL urlLocation) {
+    public static MemoryRepo buildRepo(InputStream inputStream) {
 
-        try {
-            Gson gson = new Gson();
-            Type listType = new TypeToken<List<Store>>() {
-            }.getType();
-            File jsonFile = new File(urlLocation.getFile());
-            JsonReader reader = new JsonReader(new FileReader(jsonFile));
-            return new MemoryRepo(gson.fromJson(reader, listType));
-        } catch (FileNotFoundException e) {
-            log.error("There was an error loading stores.json");
-            throw new RuntimeException(e);
-        }
-
+        Gson gson = new Gson();
+        Type listType = new TypeToken<List<Store>>() {}.getType();
+        Reader reader = new InputStreamReader(inputStream);
+        return new MemoryRepo(gson.fromJson(reader, listType));
     }
 
 }
