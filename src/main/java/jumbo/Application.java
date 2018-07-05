@@ -13,9 +13,5 @@ public class Application {
         log.info("The app is starting");
         SpringApplication.run(Application.class, args);
     }
-
-
-
-
-
+    
 }
