@@ -8,17 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * This service can find Jumbo Stores Near by to some given location, using an in Memory
- * Database created from a JSON file; a better approach would be to store that data inside
- * a NoSQL Database like Elasticsearch or Mongo which have capabilities to aggregate
- * geolocations
+ * This service contains all the operations related to Stores
  */
 @Service
-class MemoryGeolocationService implements GeolocationService {
+class MemoryGeolocationService implements StoreService {
 
     private final MemoryRepo memoryRepo;
 
@@ -28,41 +26,60 @@ class MemoryGeolocationService implements GeolocationService {
         this.memoryRepo = memoryRepo;
     }
 
+
     /**
-     * Find 5 close stores near by to a given location
+     * Find All the stores
      *
-     * @param location
-     * @return Set with 5 stores
+     * @return Set with all the stores
      */
     @Override
-    public Set<Store> findStoresNearbyTo(Location location) {
-        return getCloseStores(location).
-                keySet().
-                stream()
-                .collect(Collectors.toSet());
+    public Optional<Set<Store>> findAllStores() {
+        return Optional.ofNullable(
+                memoryRepo.getStores()
+                        .stream()
+                        .collect(Collectors.toSet()));
+    }
+
+
+    /**
+     * Find close stores near by to a given location
+     *
+     * @param location
+     * @param limit    Number of stores to retrieve
+     * @return Set with the stores
+     */
+    @Override
+    public Optional<Set<Store>> findStoresNearbyTo(Location location, int limit) {
+        return Optional.ofNullable(
+                getCloseStores(location, limit).
+                        keySet().
+                        stream()
+                        .collect(Collectors.toSet()));
 
     }
 
     /**
-     * Gets a map with 5 close stores near by to a given location.
+     * Gets a map with close stores near by to a given location.
      * The key is the store and the value is the distance between the
      * given location and the store
      *
      * @param location
+     * @param limit    Number of stores to retrieve
      * @return
      */
-    private Map<Store, Double> getCloseStores(Location location) {
+    private Map<Store, Double> getCloseStores(Location location, int limit) {
         return calculateStoreDistancesFromThat(location)
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue())
-                .limit(5)
+                .limit(limit)
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
     /**
-     * Calculates the distances between all the stores and the given location, then it returns a Map with the Store and the
-     * distance from that store to the given location
+     * Calculates the distances between all the stores and the given location,
+     * then it returns a Map with the Stores and the distances from that store
+     * to the given location
      *
      * @param location
      * @return Map with the Stores and the distances from each store to the given location

@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 /**
- * Loads any bean requires before the app starts
+ * Loads DataSourceConfiguration Beans
  */
 @Component
 @Configuration
