@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: findstore-service
+  labels:
+    app: findstore-service
+    role: master
+    tier: backend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: findstore-service
+    role: master
+    tier: backend
