@@ -1,6 +1,6 @@
 # Find store service
 
-Application that shows the 5 closest stores to a given position.
+Application that shows the closest stores to a given position.
 
 ## Stage Version
 You can try the app here http://35.233.254.61/
@@ -31,8 +31,18 @@ Patterns used:
 * Static Factory Method
 * Intercepting Filter
 
-### Build
+### Build an Run
+If you don't need to configure the environment in your machine but you want to test it locally you can use docker public images and run it in your machine.
+`Docker`
+```
+$ sudo docker run -p 3000:8080 camiloahm/findstore-service 
+```
+```
+$ sudo docker run -p 4000:80 camiloahm/findstore-ui 
+```
+
 The App is packaged with Gradle, to build and run this app you can execute in the root file this command
+`Gradle`
 ```
 $ ./gradlew build && java -jar build/libs/findstore-1.0.jar 
 ```
