@@ -34,7 +34,7 @@ Patterns used:
 * Static Factory Method
 * Intercepting Filter
 
-### Build an Run
+### Build and Run
 If you don't need to configure the environment in your machine but you want to test it locally you can use docker public images and run it in your machine.
 `Docker`
 ```
