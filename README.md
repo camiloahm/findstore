@@ -1,8 +1,24 @@
-# Find Store
+# Find Store Service
 
-The project is also available here https://github.com/camiloahm/findstore
+Application that shows the closest stores to a given position. This is the back end server, it exposes a REST API to manipulate the stores. It runs on any container service that supports java web components, in stage enviroment this backend is running on Apache Tomcat 8.
 
-## Architecture
+## Stage Version (DEMO)
+You can try the app here http://35.233.254.61/
+
+## Context Diagram
+
+`Deployment`
+https://www.lucidchart.com/documents/view/0f1c8b62-be54-4062-b269-79f54fa5455a
+
+## Components
+
+`UI`
+* findstore-ui repository https://github.com/camiloahm/findstore-ui
+
+`Service`
+* findstore-service repository https://github.com/camiloahm/findstore/
+
+## Service Architecture
 
 The application is built as a microservice with is own Dockerfile and its own springboot context
 
@@ -13,9 +29,20 @@ Patterns used:
 * Builder 
 * Dependency Injection
 * Static Factory Method
+* Intercepting Filter
 
-### Build
+### Build an Run
+If you don't need to configure the environment in your machine but you want to test it locally you can use docker public images and run it in your machine.
+`Docker`
+```
+$ sudo docker run -p 3000:8080 camiloahm/findstore-service 
+```
+```
+$ sudo docker run -p 4000:80 camiloahm/findstore-ui 
+```
+
 The App is packaged with Gradle, to build and run this app you can execute in the root file this command
+`Gradle`
 ```
 $ ./gradlew build && java -jar build/libs/findstore-1.0.jar 
 ```
@@ -38,3 +65,4 @@ I used these libraries to improve code quality and maintainability
 * Guava 
 * AssertJ
 * VAVR
+* Spring
