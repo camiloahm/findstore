@@ -1,8 +1,8 @@
 # Find Store Service
 
-Application that shows the closest stores to a given position. This is the back end server, it exposes a REST API to manipulate the stores. It runs on any container service that supports java web components, in our stage enviroment this backend is running on Apache Tomcat 8.
+Application that shows the closest stores to a given position. This is the back end server, it exposes a REST API to manipulate the stores. It runs on any container service that supports java web components, in stage enviroment this backend is running on Apache Tomcat 8.
 
-## Stage Version
+## Stage Version (DEMO)
 You can try the app here http://35.233.254.61/
 
 ## Context Diagram
