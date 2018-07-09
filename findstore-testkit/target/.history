@@ -6,3 +6,5 @@ exit
 exit
 clear
 gatling:test
+clear
+gatling:test

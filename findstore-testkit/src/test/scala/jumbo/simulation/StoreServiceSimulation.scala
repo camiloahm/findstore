@@ -14,16 +14,17 @@ class StoreServiceSimulation extends Simulation {
 
     GetCloseStores.getCloseStores.inject(
       atOnceUsers(1),
-      rampUsersPerSec(1) to 100 during (30 seconds)
+      rampUsersPerSec(1) to 300 during (300 seconds)
     )
 
   )
 
   setUp(storeServiceScenarios)
     .protocols(httpConf)
-    .maxDuration(1 minutes)
+    .maxDuration(5 minutes)
     .assertions(
-      global.responseTime.max.lte(Environment.maxResponseTime.toInt)
+      global.responseTime.max.lte(Environment.maxResponseTime.toInt),
+      global.successfulRequests.percent.gt(95)
     )
 
 

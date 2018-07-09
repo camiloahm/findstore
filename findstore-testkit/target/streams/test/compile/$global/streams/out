@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/camilo/Documents/dev/findstore/findstore-testkit/src/test/scala/jumbo/simulation/StoreServiceSimulation.scala:24:18: Invalid literal number[0m
+[0m[[0m[31merror[0m] [0m[0m    .maxDuration(5clear minutes)[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/camilo/Documents/dev/findstore/findstore-testkit/src/test/scala/jumbo/simulation/StoreServiceSimulation.scala:30:1: ')' expected but '}' found.[0m
+[0m[[0m[31merror[0m] [0m[0m}[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
