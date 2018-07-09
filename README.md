@@ -1,8 +1,24 @@
-# Find Store
+# Find store service
 
-The project is also available here https://github.com/camiloahm/findstore
+Application that shows the 5 closest stores to a given position.
 
-## Architecture
+## Stage Version
+You can try the app here http://35.233.254.61/
+
+## Context Diagram
+
+`Deployment`
+https://www.lucidchart.com/documents/view/0f1c8b62-be54-4062-b269-79f54fa5455a
+
+## Components
+
+`UI`
+* findstore-ui repository https://github.com/camiloahm/findstore-ui
+
+`Service`
+* findstore-service repository https://github.com/camiloahm/findstore/
+
+## Service Architecture
 
 The application is built as a microservice with is own Dockerfile and its own springboot context
 
@@ -13,6 +29,7 @@ Patterns used:
 * Builder 
 * Dependency Injection
 * Static Factory Method
+* Intercepting Filter
 
 ### Build
 The App is packaged with Gradle, to build and run this app you can execute in the root file this command
@@ -38,3 +55,4 @@ I used these libraries to improve code quality and maintainability
 * Guava 
 * AssertJ
 * VAVR
+* Spring
