@@ -11,7 +11,7 @@ Last Performance Test Report
 
 This test were running on a local machine with 4 cores and 16GB of ram memory
 
-you can check the report [here](reports/storeservicesimulation-1531176235517/index.html)
+you can check the report [here](http://htmlpreview.github.com/?https://github.com/camiloahm/findstore/blob/master/findstore-testkit/reports/storeservicesimulation-1531176235517/index.html)
 
 Start SBT
 ---------
