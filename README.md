@@ -18,6 +18,9 @@ https://www.lucidchart.com/documents/view/0f1c8b62-be54-4062-b269-79f54fa5455a
 `Service`
 * findstore-service repository https://github.com/camiloahm/findstore/
 
+`Performance tests`
+* findstore-testkit repository https://github.com/camiloahm/findstore/tree/master/findstore-testkit
+
 ## Service Architecture
 
 The application is built as a microservice with is own Dockerfile and its own springboot context
@@ -31,7 +34,7 @@ Patterns used:
 * Static Factory Method
 * Intercepting Filter
 
-### Build an Run
+### Build and Run
 If you don't need to configure the environment in your machine but you want to test it locally you can use docker public images and run it in your machine.
 `Docker`
 ```
