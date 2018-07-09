@@ -1,0 +1,18 @@
+{
+  "simulation": "jumbo.simulation.StoreServiceSimulation",
+  "simulationId": "storeservicesimulation",
+  "start": 1531176235517,
+  "description": "",
+  "scenarios": ["get close stores"],
+  "assertions": [
+{
+  "path": "Global",
+  "target": "max of response time",
+  "condition": "is less than or equal to",
+  "expectedValues": [500.0],
+  "result": true,
+  "message": "Global: max of response time is less than or equal to 500.0",
+  "actualValue": [353.0]
+}
+  ]
+}
