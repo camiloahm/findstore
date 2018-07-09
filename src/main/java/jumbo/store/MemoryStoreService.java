@@ -16,12 +16,12 @@ import java.util.stream.Collectors;
  * This service contains all the operations related to Stores
  */
 @Service
-class MemoryGeolocationService implements StoreService {
+class MemoryStoreService implements StoreService {
 
     private final MemoryRepo memoryRepo;
 
     @Autowired
-    MemoryGeolocationService(MemoryRepo memoryRepo) {
+    MemoryStoreService(MemoryRepo memoryRepo) {
 
         this.memoryRepo = memoryRepo;
     }
