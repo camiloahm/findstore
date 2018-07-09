@@ -1,7 +1,7 @@
-package jumbo.store;
+package jumbo;
 
-import jumbo.store.dto.Location;
-import jumbo.store.dto.Store;
+import jumbo.dto.Location;
+import jumbo.dto.Store;
 
 import java.util.Optional;
 import java.util.Set;

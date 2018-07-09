@@ -1,8 +1,8 @@
-package jumbo.store;
+package jumbo;
 
 import com.google.common.collect.ImmutableSet;
-import jumbo.store.dto.Location;
-import jumbo.store.dto.Store;
+import jumbo.dto.Location;
+import jumbo.dto.Store;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

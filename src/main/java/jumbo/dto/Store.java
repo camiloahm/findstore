@@ -1,4 +1,4 @@
-package jumbo.store.dto;
+package jumbo.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;

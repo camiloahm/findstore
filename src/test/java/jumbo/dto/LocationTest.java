@@ -1,4 +1,4 @@
-package jumbo.store.dto;
+package jumbo.dto;
 
 import org.junit.Test;
 
@@ -21,5 +21,6 @@ public class LocationTest {
 
         assertThat(distance).isEqualTo(132.48130168871572);
     }
+
 
 }

@@ -1,9 +1,9 @@
-package jumbo.store;
+package jumbo;
 
 
 import jumbo.config.MemoryRepo;
-import jumbo.store.dto.Location;
-import jumbo.store.dto.Store;
+import jumbo.dto.Location;
+import jumbo.dto.Store;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

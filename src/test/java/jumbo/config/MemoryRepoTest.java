@@ -1,4 +1,4 @@
-package jumbo.store.config;
+package jumbo.config;
 
 import jumbo.config.MemoryRepo;
 import org.junit.Test;

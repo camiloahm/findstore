@@ -2,7 +2,7 @@ package jumbo.config;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import jumbo.store.dto.Store;
+import jumbo.dto.Store;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;

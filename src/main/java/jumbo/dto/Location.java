@@ -1,4 +1,4 @@
-package jumbo.store.dto;
+package jumbo.dto;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -23,6 +23,11 @@ public class Location {
      * @return distance from this location to that
      */
     public Double distanceTo(Location that) {
+
+        if (that == null) {
+            return 0D;
+        }
+
         final double STATUTE_MILES_PER_NAUTICAL_MILE = 1.15077945;
         final double lat1 = Math.toRadians(this.latitude);
         final double lon1 = Math.toRadians(this.longitude);
