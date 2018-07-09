@@ -1,15 +1,10 @@
 package jumbo.config;
 
-import com.google.common.collect.Collections2;
-import com.google.common.collect.ImmutableCollection;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Sets;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import jumbo.store.dto.Store;
 import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;
@@ -21,7 +16,6 @@ import java.lang.reflect.Type;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Lazy Singleton that represents an in memory data base with all the Jumbo Stores
