@@ -19,7 +19,7 @@ https://www.lucidchart.com/documents/view/0f1c8b62-be54-4062-b269-79f54fa5455a
 * findstore-service repository https://github.com/camiloahm/findstore/
 
 `Performance tests`
-* findstore-testkit repository https://github.com/camiloahm/findstore/findstore-testkit 
+* findstore-testkit repository https://github.com/camiloahm/findstore/tree/master/findstore-testkit
 
 ## Service Architecture
 
