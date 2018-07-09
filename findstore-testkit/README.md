@@ -1,9 +1,10 @@
 Find Store Test Kit
 =========================
 
-This project is used to create the performance test for Find Store Project. 
+This project is used to create the performance tests for Find Store Project. Every scenario was created with [Gatling](https://gatling.io/) 
 
 This project uses SBT 1.0, which is available [here](http://www.scala-sbt.org/download.html).
+
 
 
 Start SBT
