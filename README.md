@@ -22,7 +22,7 @@ https://www.lucidchart.com/documents/view/0f1c8b62-be54-4062-b269-79f54fa5455a
 * findstore-testkit repository https://github.com/camiloahm/findstore/tree/master/findstore-testkit
 
 ### CI Server
-* Travis CI check builds [here](https://travis-ci.org/camiloahm/findstore/)
+*  Continous integration is configured with Travis CI, you can check builds [here](https://travis-ci.org/camiloahm/findstore/)
 
 ### Build and Run
 If you don't need to configure the environment in your machine but you want to test it locally you can use docker public images and run it in your machine.
