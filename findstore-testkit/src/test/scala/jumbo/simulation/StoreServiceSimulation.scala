@@ -24,7 +24,8 @@ class StoreServiceSimulation extends Simulation {
     .maxDuration(5 minutes)
     .assertions(
       global.responseTime.max.lte(Environment.maxResponseTime.toInt),
-      global.successfulRequests.percent.gt(95)
+      global.successfulRequests.percent.gt(95) ,
+      forAll.failedRequests.percent.lte(5)
     )
 
 
