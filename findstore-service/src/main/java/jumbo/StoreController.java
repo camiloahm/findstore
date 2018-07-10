@@ -17,7 +17,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 @RestController
 @RequestMapping("/stores")
-@Slf4j
+    @Slf4j
 class StoreController {
 
 

@@ -1,5 +1,6 @@
 package jumbo.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 /**
  * Global error handling component to handle exception responses.
  */
+@Slf4j
 @ControllerAdvice
 public class RestResponseExceptionHandler
         extends ResponseEntityExceptionHandler {
@@ -19,6 +21,7 @@ public class RestResponseExceptionHandler
     protected ResponseEntity<Object> handleBadRequests(
             RuntimeException ex, WebRequest request) {
         String bodyOfResponse = "Please check your request";
+        log.error(ex.getMessage(), ex);
         return handleExceptionInternal(ex, bodyOfResponse,
                 new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
     }
@@ -28,6 +31,7 @@ public class RestResponseExceptionHandler
     protected ResponseEntity<Object> handleRuntimeException(
             RuntimeException ex, WebRequest request) {
         String bodyOfResponse = "Internal server error, please contact the administrator";
+        log.error(ex.getMessage(), ex);
         return handleExceptionInternal(ex, bodyOfResponse,
                 new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
     }
