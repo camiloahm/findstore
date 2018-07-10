@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 @RestController
 @RequestMapping("/stores")
 @Slf4j
@@ -33,6 +35,10 @@ class StoreController {
                                              @RequestParam(value = "limit", required = false, defaultValue = "5") Integer limit) {
 
         log.info("Request: findCloseStores with params longitude {} latitude {}", longitude, latitude);
+
+        checkArgument(longitude != null, "Longitude can't be null");
+        checkArgument(latitude != null, "Latitude can't be null");
+        checkArgument(limit != null && limit >= 0, "Limit can't be null or negative");
 
         return storeService.
                 findStoresNearbyTo(Location

@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import jumbo.dto.Store;
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -23,7 +24,8 @@ import java.util.List;
 @Slf4j
 @Getter
 @Setter(AccessLevel.PRIVATE)
-public final class MemoryRepo {
+@EqualsAndHashCode
+public class MemoryRepo {
 
     private static MemoryRepo INSTANCE;
     private Collection<Store> stores;
@@ -32,13 +34,14 @@ public final class MemoryRepo {
     }
 
     public static MemoryRepo buildRepo(InputStream inputStream) {
-        return INSTANCE != null ? INSTANCE : initInstance(inputStream);
+        return INSTANCE == null ? initInstance(inputStream) : INSTANCE;
     }
 
     private static MemoryRepo initInstance(InputStream inputStream) {
         INSTANCE = new MemoryRepo();
         Gson gson = new Gson();
-        Type listType = new TypeToken<List<Store>>() {}.getType();
+        Type listType = new TypeToken<List<Store>>() {
+        }.getType();
         Reader reader = new InputStreamReader(inputStream);
         Collection<Store> stores = gson.fromJson(reader, listType);
 
