@@ -21,18 +21,8 @@ https://www.lucidchart.com/documents/view/0f1c8b62-be54-4062-b269-79f54fa5455a
 `Performance tests`
 * findstore-testkit repository https://github.com/camiloahm/findstore/tree/master/findstore-testkit
 
-## Service Architecture
-
-The application is built as a microservice with is own Dockerfile and its own springboot context
-
-I tried to keep all the variables immutable and responsibilities clear.
-
-Patterns used:
-* Singleton
-* Builder 
-* Dependency Injection
-* Static Factory Method
-* Intercepting Filter
+### CI Server
+*  Continous integration is configured with Travis CI, you can check builds [here](https://travis-ci.org/camiloahm/findstore/)
 
 ### Build and Run
 If you don't need to configure the environment in your machine but you want to test it locally you can use docker public images and run it in your machine.
@@ -49,6 +39,20 @@ The App is packaged with Gradle, to build and run this app you can execute in th
 ```
 $ ./gradlew build && java -jar build/libs/findstore-1.0.jar 
 ```
+
+
+## Service Architecture
+
+The application is built as a microservice with is own Dockerfile and its own springboot context
+
+I tried to keep all the variables immutable and responsibilities clear.
+
+Patterns used:
+* Singleton
+* Builder 
+* Dependency Injection
+* Static Factory Method
+* Intercepting Filter
 
 ### Dependency Injection Framework
 
