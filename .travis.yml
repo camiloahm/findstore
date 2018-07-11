@@ -16,4 +16,4 @@ cache:
     - $HOME/.gradle/wrapper/
 
 script:
-    - ./build.
+    - ./build.sh
