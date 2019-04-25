@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/camiloahm/findstore.svg?branch=master)](https://travis-ci.org/camiloahm/findstore)
+[![codecov](https://codecov.io/gh/arturbdr/code-challenge/branch/master/graph/badge.svg)](https://codecov.io/gh/arturbdr/code-challenge)
+
 # Find Store Service
 
 Application that shows the closest stores to a given position. This is the back end server, it exposes a REST API to manipulate the stores. It runs on any container service that supports java web components, in stage enviroment this backend is running on Apache Tomcat 8.
