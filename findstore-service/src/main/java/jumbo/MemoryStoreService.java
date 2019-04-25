@@ -1,6 +1,5 @@
 package jumbo;
 
-
 import jumbo.config.MemoryRepo;
 import jumbo.dto.Location;
 import jumbo.dto.Store;
@@ -26,7 +25,6 @@ class MemoryStoreService implements StoreService {
         this.memoryRepo = memoryRepo;
     }
 
-
     /**
      * Find All the stores
      *
@@ -40,20 +38,19 @@ class MemoryStoreService implements StoreService {
                         .collect(Collectors.toSet()));
     }
 
-
     /**
      * Find close stores near by to a given location
      *
      * @param location
-     * @param limit    Number of stores to retrieve
+     * @param limit Number of stores to retrieve
      * @return Set with the stores
      */
     @Override
     public Optional<Set<Store>> findStoresNearbyTo(Location location, int limit) {
         return Optional.ofNullable(
-                getCloseStores(location, limit).
-                        keySet().
-                        stream()
+                getCloseStores(location, limit)
+                        .keySet()
+                        .stream()
                         .collect(Collectors.toSet()));
 
     }
@@ -64,7 +61,7 @@ class MemoryStoreService implements StoreService {
      * given location and the store
      *
      * @param location
-     * @param limit    Number of stores to retrieve
+     * @param limit Number of stores to retrieve
      * @return
      */
     private Map<Store, Double> getCloseStores(Location location, int limit) {

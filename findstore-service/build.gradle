@@ -1,6 +1,7 @@
 buildscript {
     ext {
         springBootVersion = '2.0.3.RELEASE'
+        lombokVersion = '1.18.4'
     }
     repositories {
         mavenCentral()
@@ -13,6 +14,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'jacoco'
 
 
 group 'jumbo'
@@ -31,9 +33,12 @@ dependencies {
     testCompile('org.mockito:mockito-core:2.19.0')
 
     //testCompile group: 'org.slf4j', name: 'slf4j-nop', version: '1.8.0-beta2'
-    compileOnly 'org.projectlombok:lombok:1.18.0'
-    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.8.0-beta2'
-    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.8.0-beta2'
+    compileOnly("org.projectlombok:lombok:${lombokVersion}")
+    testCompileOnly("org.projectlombok:lombok:${lombokVersion}")
+    annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
+    testAnnotationProcessor("org.projectlombok:lombok:${lombokVersion}")
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.8.0-beta4'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.8.0-beta4'
     compile 'com.google.guava:guava:25.1-jre'
     compile group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
     compile "io.vavr:vavr:0.9.0"
@@ -41,3 +46,12 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-jersey")
 
 }
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
+
+check.dependsOn jacocoTestReport
