@@ -1,6 +1,7 @@
 ./#!/bin/sh
 cd $TRAVIS_BUILD_DIR/findstore-service
-./gradle assemble
+./gradlew build
+./gradlew assemble
 ./gradlew check
 ./gradlew codeCoverageReport  
   
